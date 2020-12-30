@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unturned Uconomy Utility", "Unturned Uconomy Utility.csproj", "{1D92C6C0-464E-4F74-8384-6B538E7D12A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShimmysUconomyUtilityModder", "..\ShimmysUconomyUtilityModder\ShimmysUconomyUtilityModder.csproj", "{0260514E-369A-4F91-92E5-C1FAB072E496}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShimmysUconomyUtilityModder", "ShimmysUconomyUtilityModder\ShimmysUconomyUtilityModder.csproj", "{0260514E-369A-4F91-92E5-C1FAB072E496}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
