@@ -1,12 +1,13 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Unturned_Uconomy_Utility
 {
@@ -31,33 +32,51 @@ namespace Unturned_Uconomy_Utility
         internal static string tableItems = "uconomyitemshop";
         internal static string tableVehicles = "uconomyvehicleshop";
 
+        public const string ModdedItemsTable = "uconutility_modded_items";
+        public const string ModdedVehiclesTable = "uconutility_modded_vehicles";
+
+        internal static bool DetectMods = false;
+
+        public Dictionary<ushort, string> ItemIndex = new Dictionary<ushort, string>();
+        public Dictionary<ushort, string> VehicleIndex = new Dictionary<ushort, string>();
+
         public frmMain()
         {
             InitializeComponent();
             Instance = this;
+            Init();
+        }
 
+        public async Task Init()
+        {
             using (WebClient wcPastebin = new WebClient())
             {
                 lblStatus.Text = "Retrieving items and vehicles from pastebin...";
                 Refresh();
-                string[] items = wcPastebin.DownloadString("http://pastebin.com/raw.php?i=HGGPMXFQ").Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+
+                string[] items = (await wcPastebin.DownloadStringTaskAsync(new Uri("http://pastebin.com/raw.php?i=HGGPMXFQ"))).Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (string item in items)
                 {
                     string[] strSplit = item.Trim().Split(new string[] { "; " }, StringSplitOptions.RemoveEmptyEntries);
                     ListViewItem lvItem = new ListViewItem(strSplit);
                     listOriginalItems.Add(lvItem);
                     listUserItemsLocal.Add(lvItem);
+
+                    if (ushort.TryParse(strSplit[0], out ushort ID))
+                        ItemIndex.Add(ID, strSplit[1]);
                 }
 
-                string[] vehicles = wcPastebin.DownloadString("http://pastebin.com/raw.php?i=sMjawF47").Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                string[] vehicles = (await wcPastebin.DownloadStringTaskAsync(new Uri("http://pastebin.com/raw.php?i=sMjawF47"))).Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (string vehicle in vehicles)
                 {
                     string[] strSplit = vehicle.Trim().Split(new string[] { "; " }, StringSplitOptions.RemoveEmptyEntries);
                     ListViewItem lvItem = new ListViewItem(strSplit);
                     listOriginalVehicles.Add(lvItem);
                     listUserVehiclesLocal.Add(lvItem);
+                    if (ushort.TryParse(strSplit[0], out ushort ID))
+                        VehicleIndex.Add(ID, strSplit[1]);
                 }
-
+                Console.WriteLine($"IDI {ItemIndex.Count}, IDV: {VehicleIndex.Count}");
                 lvLocal.Items.AddRange(listUserItemsLocal.ToArray());
                 lblStatus.Text = "Ready!";
             }
@@ -74,6 +93,136 @@ namespace Unturned_Uconomy_Utility
             this.lvLocal.MouseDoubleClick += new MouseEventHandler(lvLocal_MouseDoubleClick);
             this.lvDatabase.MouseClick += new MouseEventHandler(lvDatabase_MouseClick);
             this.lvDatabase.MouseDoubleClick += new MouseEventHandler(lvDatabase_MouseDoubleClick);
+        }
+
+        public bool LoadModded()
+        {
+            Console.WriteLine("loading modded...");
+            try
+            {
+                Dictionary<ushort, string> Items = new Dictionary<ushort, string>();
+                Dictionary<ushort, string> Vehicles = new Dictionary<ushort, string>();
+
+                List<ushort> ShopItems = new List<ushort>();
+                List<ushort> ShopVehicles = new List<ushort>();
+
+                List<ushort> KnownItems = new List<ushort>();
+                List<ushort> Knownvehicles = new List<ushort>();
+
+                foreach (ListViewItem item in listOriginalItems)
+                {
+                    if (ushort.TryParse(item.SubItems[0].Text, out ushort id)) KnownItems.Add(id);
+                }
+
+                foreach (ListViewItem vehicle in listOriginalVehicles)
+                {
+                    if (ushort.TryParse(vehicle.SubItems[0].Text, out ushort id)) Knownvehicles.Add(id);
+                }
+
+                foreach (ListViewItem item in listUserItemsDatabase)
+                {
+                    if (ushort.TryParse(item.SubItems[0].Text, out ushort id)) ShopItems.Add(id);
+                }
+
+                foreach (ListViewItem vehicle in listUserVehiclesDatabase)
+                {
+                    if (ushort.TryParse(vehicle.SubItems[0].Text, out ushort id)) ShopVehicles.Add(id);
+                }
+
+                Console.WriteLine($"ShopItem: {ShopItems.Count}, V: {ShopVehicles.Count}");
+
+                Console.WriteLine($"KI: {KnownItems.Count}, KV : {Knownvehicles.Count}");
+
+                using (MySqlCommand itemCommand = new MySqlCommand($"SELECT * FROM `{ModdedItemsTable}`;", dataConnection))
+                using (MySqlDataReader itemReader = itemCommand.ExecuteReader())
+                {
+                    while (itemReader.Read())
+                    {
+                        ushort ID = itemReader.GetUInt16(0);
+                        string Name = itemReader.GetString(1);
+                        Items.Add(ID, Name);
+                    }
+                }
+
+                using (MySqlCommand vehicleCommand = new MySqlCommand($"SELECT * FROM `{ModdedVehiclesTable}`;", dataConnection))
+                using (MySqlDataReader vehicleReader = vehicleCommand.ExecuteReader())
+                {
+                    while (vehicleReader.Read())
+                    {
+                        ushort ID = vehicleReader.GetUInt16(0);
+                        string Name = vehicleReader.GetString(1);
+                        Vehicles.Add(ID, Name);
+                    }
+                }
+                Console.WriteLine($"Collected {Items.Count} items and {Vehicles.Count} vehicles");
+
+                //listOriginalItems.Clear();
+                //listOriginalVehicles.Clear();
+                //listUserItemsLocal.Clear();
+                //listUserVehiclesLocal.Clear();
+
+                //lvLocal.Clear();
+                //lvDatabase.Clear();
+
+                var FilterItems = Items.Where(x => !KnownItems.Contains(x.Key));
+                var FilterVehicles = Vehicles.Where(x => !Knownvehicles.Contains(x.Key));
+
+                foreach (var item in FilterItems)
+                {
+                    ListViewItem vi = new ListViewItem(new string[] { item.Key.ToString(), item.Value });
+                    listOriginalItems.Add(vi);
+
+                    if (!ShopItems.Contains(item.Key))
+                    {
+                        listUserItemsLocal.Add(vi);
+
+                        if (rbItems.Checked)
+                        {
+                            lvLocal.Items.Add(vi);
+                        }
+                    }
+                }
+
+                foreach (var vehicle in FilterVehicles)
+                {
+                    ListViewItem vi = new ListViewItem(new string[] { vehicle.Key.ToString(), vehicle.Value });
+                    listOriginalVehicles.Add(vi);
+                    if (!ShopVehicles.Contains(vehicle.Key))
+                    {
+                        listUserVehiclesLocal.Add(vi);
+                        if (!rbItems.Checked)
+                        {
+                            lvLocal.Items.Add(vi);
+                        }
+                    }
+                }
+
+                foreach (var item in Items)
+                {
+                    if (!ItemIndex.ContainsKey(item.Key))
+                    {
+                        ItemIndex.Add(item.Key, item.Value);
+                    }
+                }
+
+                foreach (var item in Vehicles)
+                {
+                    if (!VehicleIndex.ContainsKey(item.Key))
+                    {
+                        VehicleIndex.Add(item.Key, item.Value);
+                    }
+                }
+                Console.WriteLine($"IDI {ItemIndex.Count}, IDV: {VehicleIndex.Count}");
+
+                Console.WriteLine($"Loaded {FilterItems.Count()} modded items and {FilterVehicles.Count()} modded vehicles");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                return false;
+            }
+            return true;
         }
 
         internal void searchList()
@@ -139,6 +288,7 @@ namespace Unturned_Uconomy_Utility
         }
 
         #region Click Events
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             searchList();
@@ -206,7 +356,7 @@ namespace Unturned_Uconomy_Utility
             tbSearch.Focus();
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        public void SendBaseRemove()
         {
             if (dataConnection.State != ConnectionState.Open || lvDatabase.SelectedItems.Count == 0) { tbSearch.Focus(); return; }
             StringBuilder stringBuilder = new StringBuilder();
@@ -253,6 +403,11 @@ namespace Unturned_Uconomy_Utility
             tbSearch.Focus();
         }
 
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            SendBaseRemove();
+        }
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (dataConnection.State != ConnectionState.Open || lvDatabase.SelectedItems.Count == 0) { tbSearch.Focus(); return; }
@@ -293,6 +448,287 @@ namespace Unturned_Uconomy_Utility
             tbSearch.Focus();
         }
 
+        public void SendDeleteAll(List<ushort> IDs, bool Item)
+        {
+            if (dataConnection.State != ConnectionState.Open || lvDatabase.SelectedItems.Count == 0) { tbSearch.Focus(); return; }
+            StringBuilder stringBuilder = new StringBuilder();
+
+            if (Item)
+            {
+                foreach (ushort ID in IDs)
+                {
+                    stringBuilder.AppendLine("DELETE FROM `" + tableItems + "` WHERE `id`='" + ID + "';");
+                }
+                lblStatus.Text = "Trying to remove item/s...";
+            }
+            else
+            {
+                foreach (ushort ID in IDs)
+                {
+                    stringBuilder.AppendLine("DELETE FROM `" + tableVehicles + "` WHERE `id`='" + ID + "';");
+                }
+                lblStatus.Text = "Trying to remove vehicle/s...";
+            }
+
+            try
+            {
+                MySqlCommand dataCommand = new MySqlCommand(stringBuilder.ToString(), dataConnection);
+                dataCommand.ExecuteNonQuery();
+            }
+            catch (MySqlException ex) { MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+
+            int lastIndex = lvDatabase.SelectedItems[0].Index - 1;
+
+            if (Item == rbItems.Checked)
+            {
+                if (rbItems.Checked)
+                {
+                    List<ListViewItem> RemoveItems = new List<ListViewItem>();
+                    foreach (ListViewItem item in lvDatabase.Items)
+                    {
+                        if (ushort.TryParse(item.SubItems[0].Text, out ushort InnerID) && IDs.Contains(InnerID)) RemoveItems.Add(item);
+                    }
+
+                    foreach (ListViewItem item in RemoveItems)
+                    {
+                        lvDatabase.Items.Remove(item);
+                        ListViewItem lvItem = new ListViewItem(item.Text);
+                        lvItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = item.SubItems[0].Text });
+                        lvItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = item.SubItems[1].Text });
+                        listUserItemsLocal.Add(lvItem);
+                    }
+                    listUserItemsLocal.Sort((s1, s2) => Convert.ToInt64(s1.Text).CompareTo(Convert.ToInt64(s2.Text)));
+                    lblStatus.Text = "Successfully removed " + lvDatabase.SelectedItems.Count.ToString() + " item/s.";
+                }
+                else
+                {
+                    List<ListViewItem> RemoveItems = new List<ListViewItem>();
+                    foreach (ListViewItem item in lvDatabase.Items)
+                    {
+                        if (ushort.TryParse(item.SubItems[0].Text, out ushort InnerID) && IDs.Contains(InnerID)) RemoveItems.Add(item);
+                    }
+
+                    foreach (ListViewItem item in RemoveItems)
+                    {
+                        lvDatabase.Items.Remove(item);
+                        ListViewItem lvItem = new ListViewItem(item.Text);
+                        lvItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = item.SubItems[0].Text });
+                        lvItem.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = item.SubItems[1].Text });
+                        listUserItemsLocal.Add(lvItem);
+                    }
+                    listUserItemsLocal.Sort((s1, s2) => Convert.ToInt64(s1.Text).CompareTo(Convert.ToInt64(s2.Text)));
+                    lblStatus.Text = "Successfully removed " + lvDatabase.SelectedItems.Count.ToString() + " vehicle/s.";
+                }
+            }
+            else
+            {
+                if (Item)
+                {
+                    lblStatus.Text = "Successfully removed " + lvDatabase.SelectedItems.Count.ToString() + " item/s.";
+                }
+                else
+                {
+                    lblStatus.Text = "Successfully removed " + lvDatabase.SelectedItems.Count.ToString() + " vehicle/s.";
+                }
+            }
+
+            searchList();
+            if (lastIndex >= 0) { lvDatabase.Items[lastIndex].Selected = true; lvDatabase.EnsureVisible(lastIndex); }
+            tbSearch.Focus();
+        }
+
+        public void SendEditAll(decimal Buyprice, decimal Sellprice)
+        {
+            if (dataConnection.State != ConnectionState.Open || lvDatabase.SelectedItems.Count == 0) { tbSearch.Focus(); return; }
+            StringBuilder stringBuilder = new StringBuilder();
+
+            if (rbItems.Checked) { foreach (ListViewItem lvSelectedItem in lvDatabase.SelectedItems) { stringBuilder.AppendLine("UPDATE `" + tableItems + "` SET `cost` = '" + Buyprice + "', `buyback` = '" + Sellprice + "' WHERE `id` = '" + lvSelectedItem.Text + "';"); } lblStatus.Text = "Trying to edit item/s..."; }
+            else { foreach (ListViewItem lvSelectedItem in lvDatabase.SelectedItems) { stringBuilder.AppendLine("UPDATE `" + tableVehicles + "` SET `cost` = '" + Buyprice + "' WHERE `id` = '" + lvSelectedItem.Text + "';"); } lblStatus.Text = "Trying to edit vehicle/s..."; }
+
+            try
+            {
+                MySqlCommand dataCommand = new MySqlCommand(stringBuilder.ToString(), dataConnection);
+                dataCommand.ExecuteNonQuery();
+            }
+            catch (MySqlException ex) { MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+
+            if (rbItems.Checked)
+            {
+                foreach (ListViewItem lvSelectedItem in lvDatabase.SelectedItems)
+                {
+                    lvSelectedItem.SubItems[2].Text = tbBuy.Text;
+                    lvSelectedItem.SubItems[3].Text = tbSell.Text;
+                    ListViewItem lvItem = listUserItemsDatabase.FirstOrDefault(cus => cus.Text == lvSelectedItem.Text);
+                    lvItem.SubItems[2].Text = tbBuy.Text;
+                    lvItem.SubItems[3].Text = tbSell.Text;
+                }
+                lblStatus.Text = "Successfully edited " + lvDatabase.SelectedItems.Count.ToString() + " item/s.";
+            }
+            else
+            {
+                foreach (ListViewItem lvSelectedItem in lvDatabase.SelectedItems)
+                {
+                    lvSelectedItem.SubItems[2].Text = tbBuy.Text;
+                    ListViewItem lvItem = listUserVehiclesDatabase.FirstOrDefault(cus => cus.Text == lvSelectedItem.Text);
+                    lvItem.SubItems[2].Text = tbBuy.Text;
+                }
+                lblStatus.Text = "Successfully edited " + lvDatabase.SelectedItems.Count.ToString() + " vehicle/s.";
+            }
+            tbSearch.Focus();
+        }
+
+        public void SendEditAll(bool items, decimal Buyprice, decimal Sellprice, List<ushort> IDs)
+        {
+            if (dataConnection.State != ConnectionState.Open || lvDatabase.SelectedItems.Count == 0) { tbSearch.Focus(); return; }
+            StringBuilder stringBuilder = new StringBuilder();
+
+            if (items)
+            {
+                foreach (ushort ID in IDs)
+                {
+                    stringBuilder.AppendLine("UPDATE `" + tableItems + "` SET `cost` = '" + Buyprice + "', `buyback` = '" + Sellprice + "' WHERE `id` = '" + ID + "';");
+                }
+                lblStatus.Text = "Trying to edit item/s...";
+            }
+            else
+            {
+                foreach (ushort ID in IDs)
+                {
+                    stringBuilder.AppendLine("UPDATE `" + tableVehicles + "` SET `cost` = '" + Buyprice + "' WHERE `id` = '" + ID + "';");
+                }
+                lblStatus.Text = "Trying to edit vehicle/s...";
+            }
+
+            try
+            {
+                MySqlCommand dataCommand = new MySqlCommand(stringBuilder.ToString(), dataConnection);
+                dataCommand.ExecuteNonQuery();
+            }
+            catch (MySqlException ex) { MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+
+            if (items == rbItems.Checked)
+            {
+                if (rbItems.Checked)
+                {
+                    foreach (ushort ID in IDs)
+                    {
+                        foreach (ListViewItem i in lvDatabase.Items)
+                        {
+                            if (i.SubItems[0].Text == ID.ToString())
+                            {
+                                i.SubItems[2].Text = Buyprice.ToString();
+                                i.SubItems[3].Text = Sellprice.ToString();
+                            }
+                        }
+                    }
+                    lblStatus.Text = "Successfully edited " + IDs.Count + " item/s.";
+                }
+                else
+                {
+                    foreach (ushort ID in IDs)
+                    {
+                        foreach (ListViewItem i in lvDatabase.Items)
+                        {
+                            if (i.SubItems[0].Text == ID.ToString())
+                            {
+                                i.SubItems[2].Text = Buyprice.ToString();
+                            }
+                        }
+                    }
+                    lblStatus.Text = "Successfully edited " + lvDatabase.SelectedItems.Count.ToString() + " vehicle/s.";
+                }
+            }
+            else
+            {
+                if (items)
+                {
+                    lblStatus.Text = "Successfully edited " + IDs.Count + " item/s.";
+                }
+                else
+                {
+                    lblStatus.Text = "Successfully edited " + lvDatabase.SelectedItems.Count.ToString() + " vehicle/s.";
+                }
+            }
+
+            tbSearch.Focus();
+        }
+
+        public void SendAddAll(bool items, decimal Buyprice, decimal Sellprice, List<ushort> IDs)
+        {
+            if (dataConnection.State != ConnectionState.Open || lvLocal.SelectedItems.Count == 0) { tbSearch.Focus(); return; }
+            StringBuilder stringBuilder = new StringBuilder();
+            Console.WriteLine("run cmds");
+            if (items)
+            {
+                foreach (ushort ID in IDs)
+                {
+                    string name = "UNKNOWN";
+                    if (ItemIndex.ContainsKey(ID))
+                        name = ItemIndex[ID].Replace("'", "''");
+
+                    stringBuilder.AppendLine("INSERT INTO `" + tableItems + $"` VALUES ({ID}, '{name}', {Buyprice}, {Sellprice}); ");
+                }
+                lblStatus.Text = "Trying to add item/s...";
+            }
+            else
+            {
+                foreach (ushort ID in IDs)
+                {
+                    string name = "UNKNOWN";
+                    if (ItemIndex.ContainsKey(ID))
+                        name = ItemIndex[ID].Replace("'", "''");
+
+                    stringBuilder.AppendLine("INSERT INTO `" + tableVehicles + $"` VALUES ({ID}, '{name}', {Buyprice}); ");
+                }
+                lblStatus.Text = "Trying to add vehicle/s...";
+            }
+            Console.WriteLine($"cmd dump:");
+            Console.WriteLine();
+            Console.WriteLine(stringBuilder.ToString());
+            try
+            {
+                MySqlCommand dataCommand = new MySqlCommand(stringBuilder.ToString(), dataConnection);
+                dataCommand.ExecuteNonQuery();
+            }
+            catch (MySqlException ex) { MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+
+            int lastIndex = lvLocal.SelectedItems[0].Index - 1;
+
+            if (rbItems.Checked)
+            {
+                foreach (ListViewItem lvSelectedItem in lvLocal.SelectedItems)
+                {
+                    listUserItemsLocal.Remove(listUserItemsLocal.FirstOrDefault(cus => cus.Text == lvSelectedItem.Text));
+                    ListViewItem lvItem = new ListViewItem(lvSelectedItem.Text);
+                    lvItem.SubItems.Add(lvSelectedItem.SubItems[1].Text);
+                    lvItem.SubItems.Add(Buyprice.ToString());
+                    lvItem.SubItems.Add(Sellprice.ToString());
+                    listUserItemsDatabase.Add(lvItem);
+                }
+                listUserItemsDatabase.Sort((s1, s2) => Convert.ToInt64(s1.Text).CompareTo(Convert.ToInt64(s2.Text)));
+                lblStatus.Text = "Successfully added " + lvLocal.SelectedItems.Count.ToString() + " item/s.";
+            }
+            else
+            {
+                foreach (ListViewItem lvSelectedItem in lvLocal.SelectedItems)
+                {
+                    listUserVehiclesLocal.Remove(listUserVehiclesLocal.FirstOrDefault(cus => cus.Text == lvSelectedItem.Text));
+                    ListViewItem lvItem = new ListViewItem(lvSelectedItem.Text);
+                    lvItem.SubItems.Add(lvSelectedItem.SubItems[1].Text);
+                    lvItem.SubItems.Add(Buyprice.ToString());
+                    listUserVehiclesDatabase.Add(lvItem);
+                }
+                listUserVehiclesDatabase.Sort((s1, s2) => Convert.ToInt64(s1.Text).CompareTo(Convert.ToInt64(s2.Text)));
+                lblStatus.Text = "Successfully added " + lvLocal.SelectedItems.Count.ToString() + " vehicle/s.";
+            }
+
+            searchList();
+            if (lastIndex >= 0) { lvLocal.Items[lastIndex].Selected = true; lvLocal.EnsureVisible(lastIndex); }
+            tbSearch.Focus();
+
+            tbSearch.Focus();
+        }
+
         private void btnGet_Click(object sender, EventArgs e)
         {
             if (lvDatabase.SelectedItems.Count > 0)
@@ -327,9 +763,11 @@ namespace Unturned_Uconomy_Utility
         {
             Process.Start("http://steamcommunity.com/profiles/76561198187138313");
         }
-        #endregion
+
+        #endregion Click Events
 
         #region ListView / Context Menu Events
+
         private void lvLocal_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && lvLocal.FocusedItem.Bounds.Contains(e.Location) && lvLocal.SelectedItems.Count > 0) { contextMenuStripLocal.Show(Cursor.Position); }
@@ -337,7 +775,9 @@ namespace Unturned_Uconomy_Utility
 
         private void lvLocal_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (lvLocal.FocusedItem.Bounds.Contains(e.Location) && lvLocal.SelectedItems.Count > 0) { Process.Start("http://unturned.wikia.com/wiki/" + lvLocal.SelectedItems[0].SubItems[1].Text); }
+
+            addToolStripMenuItem.PerformClick();
+            //if (lvLocal.FocusedItem.Bounds.Contains(e.Location) && lvLocal.SelectedItems.Count > 0) { Process.Start("http://unturned.wikia.com/wiki/" + lvLocal.SelectedItems[0].SubItems[1].Text); }
         }
 
         private void lvDatabase_MouseClick(object sender, MouseEventArgs e)
@@ -347,13 +787,105 @@ namespace Unturned_Uconomy_Utility
 
         private void lvDatabase_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (lvDatabase.FocusedItem.Bounds.Contains(e.Location) && lvDatabase.SelectedItems.Count > 0) { Process.Start("http://unturned.wikia.com/wiki/" + lvDatabase.SelectedItems[0].SubItems[1].Text); }
+            editToolStripMenuItem_Click(sender, e);
+        }
+
+        public void SendWiki()
+        {
+            if (lvDatabase.SelectedItems.Count > 0)
+            {
+                Process.Start("http://unturned.wikia.com/wiki/" + lvDatabase.SelectedItems[0].SubItems[1].Text);
+            }
+        }
+
+        public void SendWikiLocal()
+        {
+            if (lvLocal.SelectedItems.Count > 0)
+            {
+                Process.Start("http://unturned.wikia.com/wiki/" + lvLocal.SelectedItems[0].SubItems[1].Text);
+            }
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnAdd.PerformClick();
+            //btnAdd.PerformClick();
+
+            List<ushort> IDs = new List<ushort>();
+            List<string> Names = new List<string>();
+
+            decimal buy = 0;
+            decimal sell = 0;
+            foreach (ListViewItem item in lvLocal.SelectedItems)
+            {
+                if (ushort.TryParse(item.SubItems[0].Text, out ushort id))
+                {
+                    IDs.Add(id);
+                    Names.Add(item.SubItems[1].Text);
+                }
+            }
+            string title;
+            if (Names.Count < 4)
+            {
+                title = string.Join(", ", Names);
+            }
+            else
+            {
+                title = $"Adding {IDs.Count} {(rbItems.Checked ? "items" : "vehicles")}";
+            }
+            new EditDbEntry(IDs, rbItems.Checked, AddCallback, null, buy, sell, title).ShowDialog();
         }
+
+        public void AddCallback(List<ushort> IDs, byte Type, decimal Buy, decimal Sell)
+        {
+            Console.WriteLine("Run add callback");
+            SendAddAll(Type == 1, Buy, Sell, IDs);
+        }
+
+        /*
+         *
+         *         private void editToolStripMenuItem_Click(object sender, EventArgs e)
+                {
+                    //btnEdit.PerformClick();
+
+                    List<ushort> IDs = new List<ushort>();
+                    List<string> Names = new List<string>();
+
+                    decimal buy = 0;
+                    decimal sell = 0;
+                    foreach (ListViewItem item in lvDatabase.SelectedItems)
+                    {
+                        if (ushort.TryParse(item.SubItems[0].Text, out ushort id))
+                        {
+                            IDs.Add(id);
+                            Names.Add(item.SubItems[1].Text);
+
+                            decimal.TryParse(item.SubItems[2].Text, out buy);
+                            if (rbItems.Checked)
+                                decimal.TryParse(item.SubItems[3].Text, out sell);
+                        }
+                    }
+                    string title;
+                    if (Names.Count < 4)
+                    {
+                        title = string.Join(", ", Names);
+                    }
+                    else
+                    {
+                        title = $"Editing {IDs.Count} {(rbItems.Checked ? "items" : "vehicles")}";
+                    }
+                    new EditDbEntry(IDs, rbItems.Checked, EditCallback, DeleteCallback, buy, sell, title).ShowDialog();
+                }
+
+                public void EditCallback(List<ushort> IDs, byte Type, decimal Buy, decimal Sell)
+                {
+                    SendEditAll(Type == 1, Buy, Sell, IDs);
+                }
+
+                public void DeleteCallback(List<ushort> IDs, byte Type)
+                {
+                    SendDeleteAll(IDs, Type == 1);
+                }
+        */
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -362,14 +894,54 @@ namespace Unturned_Uconomy_Utility
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnEdit.PerformClick();
+            //btnEdit.PerformClick();
+
+            List<ushort> IDs = new List<ushort>();
+            List<string> Names = new List<string>();
+
+            decimal buy = 0;
+            decimal sell = 0;
+            foreach (ListViewItem item in lvDatabase.SelectedItems)
+            {
+                if (ushort.TryParse(item.SubItems[0].Text, out ushort id))
+                {
+                    IDs.Add(id);
+                    Names.Add(item.SubItems[1].Text);
+
+                    decimal.TryParse(item.SubItems[2].Text, out buy);
+                    if (rbItems.Checked)
+                        decimal.TryParse(item.SubItems[3].Text, out sell);
+                }
+            }
+            string title;
+            if (Names.Count < 4)
+            {
+                title = string.Join(", ", Names);
+            }
+            else
+            {
+                title = $"Editing {IDs.Count} {(rbItems.Checked ? "items" : "vehicles")}";
+            }
+            new EditDbEntry(IDs, rbItems.Checked, EditCallback, DeleteCallback, buy, sell, title).ShowDialog();
         }
-        #endregion
+
+        public void EditCallback(List<ushort> IDs, byte Type, decimal Buy, decimal Sell)
+        {
+            SendEditAll(Type == 1, Buy, Sell, IDs);
+        }
+
+        public void DeleteCallback(List<ushort> IDs, byte Type)
+        {
+            SendDeleteAll(IDs, Type == 1);
+        }
+
+        #endregion ListView / Context Menu Events
 
         #region TextBox Events
-        string strCurrencyBuy = string.Empty;
-        string strCurrencySell = string.Empty;
-        bool acceptableKey = false;
+
+        private string strCurrencyBuy = string.Empty;
+        private string strCurrencySell = string.Empty;
+        private bool acceptableKey = false;
 
         private void tbBuy_KeyDown(object sender, KeyEventArgs e)
         {
@@ -459,9 +1031,11 @@ namespace Unturned_Uconomy_Utility
                 }
             }
         }
-        #endregion
+
+        #endregion TextBox Events
 
         #region Other Events
+
         private void currentDomain_ProcessExit(object sender, EventArgs e)
         {
             if (dataConnection.State == ConnectionState.Open) { dataConnection.Close(); }
@@ -471,6 +1045,7 @@ namespace Unturned_Uconomy_Utility
         {
             if (e.CurrentState == ConnectionState.Open)
             {
+                Console.WriteLine("refreshing data....");
                 lblStatus.Text = "Successfully connected to MySQL host. Loading items and vehicles...";
                 Refresh();
 
@@ -574,9 +1149,28 @@ namespace Unturned_Uconomy_Utility
                 lvLocal.Items.AddRange(listUserVehiclesLocal.ToArray());
                 if (dataConnection.State == ConnectionState.Open) { lvDatabase.Items.AddRange(listUserVehiclesDatabase.ToArray()); }
             }
-            
+
             tbSearch.Focus();
         }
-        #endregion
+
+        #endregion Other Events
+
+        private void tbBuy_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void wikiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendWiki();
+        }
+
+        private void wikiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SendWikiLocal();
+        }
     }
 }

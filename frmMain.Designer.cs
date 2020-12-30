@@ -48,7 +48,6 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblAbout = new System.Windows.Forms.Label();
-            this.btnDonate = new System.Windows.Forms.Button();
             this.lvLocal = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,8 +56,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.rbVehicles = new System.Windows.Forms.RadioButton();
             this.rbItems = new System.Windows.Forms.RadioButton();
@@ -68,14 +65,17 @@
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnCleanTable = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnCleanTable = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.wikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wikiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.contextMenuStripLocal.SuspendLayout();
             this.contextMenuStripDatabase.SuspendLayout();
@@ -83,6 +83,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -144,6 +145,7 @@
             this.tbBuy.TabIndex = 0;
             this.tbBuy.Text = "0.00";
             this.tbBuy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbBuy.TextChanged += new System.EventHandler(this.tbBuy_TextChanged);
             // 
             // groupBox2
             // 
@@ -278,7 +280,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.groupBox4.Location = new System.Drawing.Point(426, 96);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(224, 45);
+            this.groupBox4.Size = new System.Drawing.Size(268, 45);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "About";
@@ -288,28 +290,16 @@
             this.lblAbout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAbout.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbout.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbout.ForeColor = System.Drawing.Color.Blue;
             this.lblAbout.Location = new System.Drawing.Point(6, 12);
             this.lblAbout.Name = "lblAbout";
-            this.lblAbout.Size = new System.Drawing.Size(212, 27);
+            this.lblAbout.Size = new System.Drawing.Size(256, 27);
             this.lblAbout.TabIndex = 0;
-            this.lblAbout.Text = "Coded by Freenex";
+            this.lblAbout.Text = "Uconomy Utility - Shimmy\'s Mod";
             this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.lblAbout, "Open Freenex\'s Steam profile");
             this.lblAbout.Click += new System.EventHandler(this.lblAbout_Click);
-            // 
-            // btnDonate
-            // 
-            this.btnDonate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDonate.Image = ((System.Drawing.Image)(resources.GetObject("btnDonate.Image")));
-            this.btnDonate.Location = new System.Drawing.Point(744, 102);
-            this.btnDonate.Name = "btnDonate";
-            this.btnDonate.Size = new System.Drawing.Size(38, 38);
-            this.btnDonate.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.btnDonate, "Donate :)");
-            this.btnDonate.UseVisualStyleBackColor = true;
-            this.btnDonate.Click += new System.EventHandler(this.btnDonate_Click);
             // 
             // lvLocal
             // 
@@ -320,6 +310,7 @@
             this.lvLocal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.lvLocal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lvLocal.FullRowSelect = true;
             this.lvLocal.HideSelection = false;
             this.lvLocal.Location = new System.Drawing.Point(3, 3);
@@ -350,9 +341,10 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
+            this.lvDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lvDatabase.FullRowSelect = true;
             this.lvDatabase.HideSelection = false;
-            this.lvDatabase.Location = new System.Drawing.Point(3, 3);
+            this.lvDatabase.Location = new System.Drawing.Point(7, -1);
             this.lvDatabase.Name = "lvDatabase";
             this.lvDatabase.Size = new System.Drawing.Size(438, 481);
             this.lvDatabase.TabIndex = 100;
@@ -376,24 +368,6 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Sell";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackgroundImage = global::Unturned_Uconomy_Utility.Properties.Resources.GreyBacker;
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 644);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(794, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 100;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(59, 17);
-            this.lblStatus.Text = "Initialize...";
             // 
             // groupBox5
             // 
@@ -433,10 +407,11 @@
             // contextMenuStripLocal
             // 
             this.contextMenuStripLocal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem});
+            this.addToolStripMenuItem,
+            this.wikiToolStripMenuItem1});
             this.contextMenuStripLocal.Name = "contextMenuStripLocal";
             this.contextMenuStripLocal.ShowImageMargin = false;
-            this.contextMenuStripLocal.Size = new System.Drawing.Size(72, 26);
+            this.contextMenuStripLocal.Size = new System.Drawing.Size(156, 70);
             // 
             // addToolStripMenuItem
             // 
@@ -449,10 +424,11 @@
             // 
             this.contextMenuStripDatabase.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.wikiToolStripMenuItem});
             this.contextMenuStripDatabase.Name = "contextMenuStripLocal";
             this.contextMenuStripDatabase.ShowImageMargin = false;
-            this.contextMenuStripDatabase.Size = new System.Drawing.Size(93, 48);
+            this.contextMenuStripDatabase.Size = new System.Drawing.Size(93, 70);
             // 
             // removeToolStripMenuItem
             // 
@@ -489,12 +465,24 @@
             this.splitContainer1.TabIndex = 100;
             this.splitContainer1.TabStop = false;
             // 
+            // btnImport
+            // 
+            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImport.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.Image")));
+            this.btnImport.Location = new System.Drawing.Point(744, 102);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(38, 38);
+            this.btnImport.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnImport, "Import items/vehicles");
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // btnCleanTable
             // 
             this.btnCleanTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCleanTable.Enabled = false;
             this.btnCleanTable.Image = ((System.Drawing.Image)(resources.GetObject("btnCleanTable.Image")));
-            this.btnCleanTable.Location = new System.Drawing.Point(656, 102);
+            this.btnCleanTable.Location = new System.Drawing.Point(700, 102);
             this.btnCleanTable.Name = "btnCleanTable";
             this.btnCleanTable.Size = new System.Drawing.Size(38, 38);
             this.btnCleanTable.TabIndex = 5;
@@ -502,17 +490,37 @@
             this.btnCleanTable.UseVisualStyleBackColor = true;
             this.btnCleanTable.Click += new System.EventHandler(this.btnCleanTable_Click);
             // 
-            // btnImport
+            // statusStrip1
             // 
-            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImport.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.Image")));
-            this.btnImport.Location = new System.Drawing.Point(700, 102);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(38, 38);
-            this.btnImport.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.btnImport, "Import items/vehicles");
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            this.statusStrip1.BackgroundImage = global::Unturned_Uconomy_Utility.Properties.Resources.GreyBacker;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 644);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(794, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 100;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(59, 17);
+            this.lblStatus.Text = "Initialize...";
+            // 
+            // wikiToolStripMenuItem
+            // 
+            this.wikiToolStripMenuItem.Name = "wikiToolStripMenuItem";
+            this.wikiToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.wikiToolStripMenuItem.Text = "Wiki";
+            this.wikiToolStripMenuItem.Click += new System.EventHandler(this.wikiToolStripMenuItem_Click);
+            // 
+            // wikiToolStripMenuItem1
+            // 
+            this.wikiToolStripMenuItem1.Name = "wikiToolStripMenuItem1";
+            this.wikiToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
+            this.wikiToolStripMenuItem1.Text = "Wiki";
+            this.wikiToolStripMenuItem1.Click += new System.EventHandler(this.wikiToolStripMenuItem1_Click);
             // 
             // frmMain
             // 
@@ -527,7 +535,6 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btnDonate);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
@@ -535,15 +542,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(810, 400);
             this.Name = "frmMain";
-            this.Text = "Unturned Uconomy Utility";
+            this.Text = "Unturned Uconomy Utility - Shimmys Mod";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.contextMenuStripLocal.ResumeLayout(false);
@@ -552,6 +558,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,7 +579,6 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lblAbout;
-        private System.Windows.Forms.Button btnDonate;
         private System.Windows.Forms.ListView lvLocal;
         private System.Windows.Forms.ListView lvDatabase;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -600,6 +607,8 @@
         private System.Windows.Forms.Button btnCleanTable;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.ToolStripMenuItem wikiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wikiToolStripMenuItem1;
     }
 }
 

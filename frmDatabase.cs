@@ -1,9 +1,9 @@
-﻿using Microsoft.Win32;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32;
+using MySql.Data.MySqlClient;
 
 namespace Unturned_Uconomy_Utility
 {
@@ -18,15 +18,25 @@ namespace Unturned_Uconomy_Utility
                 RegistryKey regKey = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
                 regKey = regKey.OpenSubKey("Freenex's Unturned Uconomy Utility", true);
 
-                tbHost.Text = regKey.GetValue("Host").ToString();
-                tbPort.Text = regKey.GetValue("Port").ToString();
-                tbUser.Text = Encoding.UTF8.GetString(Convert.FromBase64String(regKey.GetValue("User").ToString()));
-                tbPassword.Text = Encoding.UTF8.GetString(Convert.FromBase64String(regKey.GetValue("Password").ToString()));
-                tbDatabase.Text = regKey.GetValue("Database").ToString();
-                tbTableItems.Text = regKey.GetValue("TableItems").ToString();
-                tbTableVehicles.Text = regKey.GetValue("TableVehicles").ToString();
+                cbDetectMods.Checked = bool.Parse(regKey.GetValue("DetectMods", false).ToString());
 
-                cbSave.Checked = true;
+                if (bool.Parse(regKey.GetValue("AutoSave", "false").ToString()))
+                {
+                    Console.WriteLine("autosave enabled");
+                    tbHost.Text = regKey.GetValue("Host").ToString();
+                    tbPort.Text = regKey.GetValue("Port").ToString();
+                    tbUser.Text = Encoding.UTF8.GetString(Convert.FromBase64String(regKey.GetValue("User").ToString()));
+                    tbPassword.Text = Encoding.UTF8.GetString(Convert.FromBase64String(regKey.GetValue("Password").ToString()));
+                    tbDatabase.Text = regKey.GetValue("Database").ToString();
+                    tbTableItems.Text = regKey.GetValue("TableItems").ToString();
+                    tbTableVehicles.Text = regKey.GetValue("TableVehicles").ToString();
+                    cbSave.Checked = true;
+                }
+                else
+                {
+                    Console.WriteLine("auto save disabled");
+                    DefaultFeilds();
+                }
             }
             else
             {
@@ -38,6 +48,18 @@ namespace Unturned_Uconomy_Utility
                 tbTableItems.Text = frmMain.tableItems;
                 tbTableVehicles.Text = frmMain.tableVehicles;
             }
+        }
+
+
+        private void DefaultFeilds()
+        {
+            tbHost.Text = frmMain.host;
+            tbPort.Text = frmMain.port;
+            tbUser.Text = frmMain.user;
+            tbPassword.Text = frmMain.password;
+            tbDatabase.Text = frmMain.database;
+            tbTableItems.Text = frmMain.tableItems;
+            tbTableVehicles.Text = frmMain.tableVehicles;
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -55,9 +77,19 @@ namespace Unturned_Uconomy_Utility
                     frmMain.password = tbPassword.Text;
                     frmMain.database = tbDatabase.Text;
                     frmMain.tableItems = tbTableItems.Text;
+                    frmMain.DetectMods = cbDetectMods.Checked;
                     frmMain.tableVehicles = tbTableVehicles.Text;
                     frmMain.dataConnection.ConnectionString = String.Format("SERVER={0};PORT={1};UID={2};PASSWORD={3};DATABASE={4};", tbHost.Text, tbPort.Text, tbUser.Text, tbPassword.Text, tbDatabase.Text);
                     frmMain.dataConnection.Open();
+
+                    if (cbDetectMods.Checked)
+                    {
+                        if (!frmMain.Instance.LoadModded())
+                        {
+                            MessageBox.Show("Failed to load modded items from server. The server is likely lacking the required plugin.");
+                        }
+                    }
+
                     this.Close();
                 }
                 catch (MySqlException ex)
@@ -71,11 +103,14 @@ namespace Unturned_Uconomy_Utility
                     frmMain.Instance.lblStatus.Text = "Can't connect to database.";
                     MessageBox.Show(ex.Message, frmMain.Instance.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                RegistryKey regKey = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
+                regKey.CreateSubKey("Freenex's Unturned Uconomy Utility");
+                regKey = regKey.OpenSubKey("Freenex's Unturned Uconomy Utility", true);
+                regKey.SetValue("DetectMods", cbDetectMods.Checked.ToString());
                 if (cbSave.Checked)
                 {
-                    RegistryKey regKey = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
-                    regKey.CreateSubKey("Freenex's Unturned Uconomy Utility");
-                    regKey = regKey.OpenSubKey("Freenex's Unturned Uconomy Utility", true);
+        
+                    regKey.SetValue("AutoSave", true);
 
                     regKey.SetValue("Host", tbHost.Text);
                     regKey.SetValue("Port", tbPort.Text);

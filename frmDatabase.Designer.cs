@@ -47,6 +47,7 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.cbSave = new System.Windows.Forms.CheckBox();
             this.btnDeleteInformation = new System.Windows.Forms.Button();
+            this.cbDetectMods = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,7 +202,7 @@
             // btnConnect
             // 
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.Location = new System.Drawing.Point(12, 245);
+            this.btnConnect.Location = new System.Drawing.Point(12, 272);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(252, 25);
             this.btnConnect.TabIndex = 8;
@@ -212,7 +213,7 @@
             // cbSave
             // 
             this.cbSave.AutoSize = true;
-            this.cbSave.Location = new System.Drawing.Point(12, 223);
+            this.cbSave.Location = new System.Drawing.Point(12, 245);
             this.cbSave.Name = "cbSave";
             this.cbSave.Size = new System.Drawing.Size(192, 17);
             this.cbSave.TabIndex = 6;
@@ -222,7 +223,7 @@
             // btnDeleteInformation
             // 
             this.btnDeleteInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteInformation.Location = new System.Drawing.Point(210, 219);
+            this.btnDeleteInformation.Location = new System.Drawing.Point(210, 243);
             this.btnDeleteInformation.Name = "btnDeleteInformation";
             this.btnDeleteInformation.Size = new System.Drawing.Size(54, 23);
             this.btnDeleteInformation.TabIndex = 7;
@@ -230,12 +231,23 @@
             this.btnDeleteInformation.UseVisualStyleBackColor = true;
             this.btnDeleteInformation.Click += new System.EventHandler(this.btnDeleteInformation_Click);
             // 
+            // cbDetectMods
+            // 
+            this.cbDetectMods.AutoSize = true;
+            this.cbDetectMods.Location = new System.Drawing.Point(12, 222);
+            this.cbDetectMods.Name = "cbDetectMods";
+            this.cbDetectMods.Size = new System.Drawing.Size(170, 17);
+            this.cbDetectMods.TabIndex = 101;
+            this.cbDetectMods.Text = "Detect modded items/vehicles";
+            this.cbDetectMods.UseVisualStyleBackColor = true;
+            // 
             // frmDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(276, 282);
+            this.ClientSize = new System.Drawing.Size(276, 307);
+            this.Controls.Add(this.cbDetectMods);
             this.Controls.Add(this.btnDeleteInformation);
             this.Controls.Add(this.cbSave);
             this.Controls.Add(this.btnConnect);
@@ -286,5 +298,6 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.CheckBox cbSave;
         private System.Windows.Forms.Button btnDeleteInformation;
+        private System.Windows.Forms.CheckBox cbDetectMods;
     }
 }

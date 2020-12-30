@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unturned Uconomy Utility", "Unturned Uconomy Utility.csproj", "{1D92C6C0-464E-4F74-8384-6B538E7D12A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShimmysUconomyUtilityModder", "..\ShimmysUconomyUtilityModder\ShimmysUconomyUtilityModder.csproj", "{0260514E-369A-4F91-92E5-C1FAB072E496}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D92C6C0-464E-4F74-8384-6B538E7D12A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D92C6C0-464E-4F74-8384-6B538E7D12A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D92C6C0-464E-4F74-8384-6B538E7D12A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D92C6C0-464E-4F74-8384-6B538E7D12A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0260514E-369A-4F91-92E5-C1FAB072E496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0260514E-369A-4F91-92E5-C1FAB072E496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0260514E-369A-4F91-92E5-C1FAB072E496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0260514E-369A-4F91-92E5-C1FAB072E496}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1681DB5-3B16-4A0C-84D4-D0E2D6D4B67C}
+	EndGlobalSection
+EndGlobal
