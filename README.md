@@ -23,3 +23,4 @@ Rather than using the controls on the top left, you can now also open the new ed
 ![alt text](https://i.ibb.co/tbNx20T/image.png "Unturned Uconomy Utility")
 
 ![alt text](https://i.ibb.co/6BvxBrp/image.png "Adding/editing items")
+Tip: You can just press enter to commit the changes, no need to reach for your mouse.
