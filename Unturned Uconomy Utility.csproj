@@ -124,6 +124,7 @@
     <Content Include="icons\clean.png" />
     <Content Include="icons\heart.png" />
     <Content Include="icons\import.png" />
+    <None Include="Resources\GreyBacker.png" />
     <EmbeddedResource Include="libs\MySql.Data.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

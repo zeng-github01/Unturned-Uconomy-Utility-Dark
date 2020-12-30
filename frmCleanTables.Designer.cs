@@ -50,6 +50,7 @@
             // 
             // btnAnalyze
             // 
+            this.btnAnalyze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnalyze.Location = new System.Drawing.Point(12, 420);
             this.btnAnalyze.Name = "btnAnalyze";
             this.btnAnalyze.Size = new System.Drawing.Size(230, 25);
@@ -60,6 +61,7 @@
             // 
             // btnClean
             // 
+            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.Location = new System.Drawing.Point(12, 451);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(230, 25);
@@ -88,37 +90,49 @@
             // 
             // lbRenameItems
             // 
+            this.lbRenameItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.lbRenameItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbRenameItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lbRenameItems.FormattingEnabled = true;
             this.lbRenameItems.Location = new System.Drawing.Point(12, 45);
             this.lbRenameItems.Name = "lbRenameItems";
-            this.lbRenameItems.Size = new System.Drawing.Size(110, 147);
+            this.lbRenameItems.Size = new System.Drawing.Size(110, 145);
             this.lbRenameItems.TabIndex = 100;
             this.lbRenameItems.TabStop = false;
             // 
             // lbRemoveItems
             // 
+            this.lbRemoveItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.lbRemoveItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbRemoveItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lbRemoveItems.FormattingEnabled = true;
             this.lbRemoveItems.Location = new System.Drawing.Point(12, 237);
             this.lbRemoveItems.Name = "lbRemoveItems";
-            this.lbRemoveItems.Size = new System.Drawing.Size(110, 147);
+            this.lbRemoveItems.Size = new System.Drawing.Size(110, 145);
             this.lbRemoveItems.TabIndex = 100;
             this.lbRemoveItems.TabStop = false;
             // 
             // lbRenameVehicles
             // 
+            this.lbRenameVehicles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.lbRenameVehicles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbRenameVehicles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lbRenameVehicles.FormattingEnabled = true;
             this.lbRenameVehicles.Location = new System.Drawing.Point(132, 45);
             this.lbRenameVehicles.Name = "lbRenameVehicles";
-            this.lbRenameVehicles.Size = new System.Drawing.Size(110, 147);
+            this.lbRenameVehicles.Size = new System.Drawing.Size(110, 145);
             this.lbRenameVehicles.TabIndex = 100;
             this.lbRenameVehicles.TabStop = false;
             // 
             // lbRemoveVehicles
             // 
+            this.lbRemoveVehicles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.lbRemoveVehicles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbRemoveVehicles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.lbRemoveVehicles.FormattingEnabled = true;
             this.lbRemoveVehicles.Location = new System.Drawing.Point(132, 237);
             this.lbRemoveVehicles.Name = "lbRemoveVehicles";
-            this.lbRemoveVehicles.Size = new System.Drawing.Size(110, 147);
+            this.lbRemoveVehicles.Size = new System.Drawing.Size(110, 145);
             this.lbRemoveVehicles.TabIndex = 100;
             this.lbRemoveVehicles.TabStop = false;
             // 
@@ -210,6 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(254, 488);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -229,6 +244,7 @@
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnAnalyze);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

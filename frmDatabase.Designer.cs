@@ -52,6 +52,9 @@
             // 
             // tbHost
             // 
+            this.tbHost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbHost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbHost.Location = new System.Drawing.Point(74, 9);
             this.tbHost.Name = "tbHost";
             this.tbHost.Size = new System.Drawing.Size(190, 20);
@@ -77,6 +80,9 @@
             // 
             // tbPort
             // 
+            this.tbPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbPort.Location = new System.Drawing.Point(74, 35);
             this.tbPort.Name = "tbPort";
             this.tbPort.Size = new System.Drawing.Size(190, 20);
@@ -93,6 +99,9 @@
             // 
             // tbUser
             // 
+            this.tbUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbUser.Location = new System.Drawing.Point(74, 61);
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(190, 20);
@@ -109,6 +118,9 @@
             // 
             // tbPassword
             // 
+            this.tbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbPassword.Location = new System.Drawing.Point(74, 87);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(190, 20);
@@ -126,6 +138,9 @@
             // 
             // tbDatabase
             // 
+            this.tbDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbDatabase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbDatabase.Location = new System.Drawing.Point(74, 113);
             this.tbDatabase.Name = "tbDatabase";
             this.tbDatabase.Size = new System.Drawing.Size(190, 20);
@@ -137,6 +152,7 @@
             this.groupBox1.Controls.Add(this.tbTableVehicles);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.tbTableItems);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 139);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(252, 77);
@@ -155,6 +171,9 @@
             // 
             // tbTableVehicles
             // 
+            this.tbTableVehicles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbTableVehicles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTableVehicles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbTableVehicles.Location = new System.Drawing.Point(62, 45);
             this.tbTableVehicles.Name = "tbTableVehicles";
             this.tbTableVehicles.Size = new System.Drawing.Size(184, 20);
@@ -171,6 +190,9 @@
             // 
             // tbTableItems
             // 
+            this.tbTableItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbTableItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTableItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbTableItems.Location = new System.Drawing.Point(62, 19);
             this.tbTableItems.Name = "tbTableItems";
             this.tbTableItems.Size = new System.Drawing.Size(184, 20);
@@ -178,6 +200,7 @@
             // 
             // btnConnect
             // 
+            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConnect.Location = new System.Drawing.Point(12, 245);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(252, 25);
@@ -198,6 +221,7 @@
             // 
             // btnDeleteInformation
             // 
+            this.btnDeleteInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteInformation.Location = new System.Drawing.Point(210, 219);
             this.btnDeleteInformation.Name = "btnDeleteInformation";
             this.btnDeleteInformation.Size = new System.Drawing.Size(54, 23);
@@ -210,6 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(276, 282);
             this.Controls.Add(this.btnDeleteInformation);
             this.Controls.Add(this.cbSave);
@@ -227,6 +252,7 @@
             this.Controls.Add(this.tbHost);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

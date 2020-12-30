@@ -38,6 +38,7 @@
             // 
             // btnImport
             // 
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Location = new System.Drawing.Point(12, 230);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(360, 30);
@@ -57,6 +58,9 @@
             // 
             // tbItems
             // 
+            this.tbItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbItems.Location = new System.Drawing.Point(12, 25);
             this.tbItems.Multiline = true;
             this.tbItems.Name = "tbItems";
@@ -74,6 +78,9 @@
             // 
             // tbVehicles
             // 
+            this.tbVehicles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.tbVehicles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbVehicles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tbVehicles.Location = new System.Drawing.Point(12, 136);
             this.tbVehicles.Multiline = true;
             this.tbVehicles.Name = "tbVehicles";
@@ -84,6 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(384, 272);
             this.Controls.Add(this.tbVehicles);
             this.Controls.Add(this.label2);
@@ -91,6 +99,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnImport);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
