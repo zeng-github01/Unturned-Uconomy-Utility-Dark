@@ -8,6 +8,7 @@ This modded version provides better performance, a dark-themed interface and bet
 
 ## Modded Content Support.
 This mod allows the tool to load modded items/vehicles from the remote server. You can enable this functionality by adding the plugin to your server, and enabling 'Detect modded items/vehicles' when connecting.
+After installing the plugin, run the command `/UconUtilUpdate` to update the server's modded assets.
 
 ![](https://i.ibb.co/5RWDPG9/image.png)
 
