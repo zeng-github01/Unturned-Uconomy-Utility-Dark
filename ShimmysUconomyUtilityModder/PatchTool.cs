@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using fr34kyn01535.Uconomy;
+﻿using fr34kyn01535.Uconomy;
 using MySql.Data.MySqlClient;
 using SDG.Unturned;
+using ShimmyMySherbet.MySQL.EF.Core;
+using ShimmyMySherbet.MySQL.EF.Models;
 using ShimmysUconomyUtilityModder;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShimmyMySherbet.ZaupShopNameUpgrade
 {
-
     public class PatchTool
     {
         public async Task Run(Action<string> Log)
@@ -19,9 +20,16 @@ namespace ShimmyMySherbet.ZaupShopNameUpgrade
             UconomyConfiguration config = Uconomy.Instance.Configuration.Instance;
             MySqlConnection connection = new MySqlConnection($"server={config.DatabaseAddress};Database={config.DatabaseName};Uid={config.DatabaseUsername};Pwd={config.DatabasePassword};Port={config.DatabasePort}");
             await connection.OpenAsync();
+
+            var Client = new MySQLEntityClient(connection);
+
             Log("connected to database!");
             Log("Finding all Item Assets...");
-            Dictionary<ushort, string> Items = new Dictionary<ushort, string>();
+            //Dictionary<ushort, string> Items = new Dictionary<ushort, string>();
+
+            var itemsWriter = new TransactionalBulkInserter<ZaupItem>(connection, main.ItemsTable);
+            var Items = new List<ushort>();
+
             Asset[] ItemAssets = Assets.find(EAssetType.ITEM).Where(x => (x is ItemAsset IA && IA.assetOrigin == EAssetOrigin.WORKSHOP)).ToArray();
 
             int Truncated = 0;
@@ -30,54 +38,51 @@ namespace ShimmyMySherbet.ZaupShopNameUpgrade
             {
                 if (asset is ItemAsset IA)
                 {
-                    if (!Items.ContainsKey(asset.id))
-                        Items.Add(asset.id, AssetNameTool.GetAssetName(asset, ref Truncated));
+                    if (!Items.Contains(asset.id))
+                    {
+                        Items.Add(asset.id);
+                        itemsWriter.Insert(new ZaupItem() { ID = asset.id, ItemName = AssetNameTool.GetAssetName(asset, ref Truncated), BuyBack = 0, Cost = 0 });
+                    }
                 }
             }
             Log($"Found {Items.Count} items.");
             Log("Finding all Item Assets...");
-            Dictionary<ushort, string> Vehicles = new Dictionary<ushort, string>();
+            var vehiclesWriter = new TransactionalBulkInserter<ZaupVehicle>(connection, main.VehiclesTable);
+            var vehicles = new List<ushort>();
+
             Asset[] VehicleAssets = Assets.find(EAssetType.VEHICLE).Where(x => (x is VehicleAsset IA && IA.assetOrigin == EAssetOrigin.WORKSHOP)).ToArray();
             foreach (Asset asset in VehicleAssets)
             {
-                if (asset is VehicleAsset)
+                if (asset is VehicleAsset va)
                 {
-                    if (!Vehicles.ContainsKey(asset.id))
-                        Vehicles.Add(asset.id, AssetNameTool.GetAssetName(asset, ref Truncated));
+                    if (!vehicles.Contains(asset.id))
+                    {
+                        vehicles.Add(asset.id);
+                        vehiclesWriter.Insert(new ZaupVehicle() { ID = asset.id, VehicleName = AssetNameTool.GetAssetName(asset, ref Truncated), Cost = 0 });
+                    }
                 }
             }
 
-            Log($"Found {Vehicles.Count} vehicles.");
+            Log($"Found {vehicles.Count} vehicles.");
 
             if (Truncated > 0)
             {
                 Log($"WARNING: Some item names were too long to fit in the database, {Truncated} item/vehicle names were truncated to 32 characters.");
             }
 
-            Log("Generating update dump");
+            Log("Writing data to table...");
 
-            StringBuilder Writer = new StringBuilder();
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
 
-            foreach (var Item in Items)
-            {
-                Writer.AppendLine($"INSERT IGNORE INTO `{main.ItemsTable}` VALUES ({Item.Key}, '{Item.Value.Replace("'", "''")}');");
-            }
-            foreach (var Vehicle in Vehicles)
-            {
-                Writer.AppendLine($"INSERT IGNORE INTO `{main.VehiclesTable}` VALUES ({Vehicle.Key}, '{Vehicle.Value.Replace("'", "''")}');");
-            }
+            vehiclesWriter.Commit();
+            var r = itemsWriter.Commit();
+            sw.Stop();
 
-            Log("Dumping SQL dump...");
-
-            Log("SQL Dump generated, uploading dump to database...");
-
-            MySqlScript script = new MySqlScript(connection, Writer.ToString());
-
-            int r = await script.ExecuteAsync();
-
-            Log($"Upload Complete, rows modified: {r}.");
+            Log($"Upload Complete in {sw.ElapsedMilliseconds}ms  (@ {Math.Round((vehicles.Count + Items.Count) / (double)(sw.ElapsedMilliseconds * 1000), 2)} p/s), rows modified: {r}.");
         }
     }
+
     public static class AssetNameTool
     {
         public static string GetAssetName(Asset asset, ref int Truncated)
