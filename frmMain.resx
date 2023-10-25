@@ -117,32 +117,485 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>133, 17</value>
-  </metadata>
-  <metadata name="contextMenuStripLocal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>230, 17</value>
-  </metadata>
-  <metadata name="contextMenuStripDatabase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>407, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>133, 17</value>
-  </metadata>
+  <data name="&gt;&gt;tbSearch.Name" xml:space="preserve">
+    <value>tbSearch</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnImport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbSell.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="contextMenuStripDatabase.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lvDatabase.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="&gt;&gt;rbItems.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="addToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="lblBuy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;rbVehicles.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;btnGet.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="groupBox5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;columnHeader4.Name" xml:space="preserve">
+    <value>columnHeader4</value>
+  </data>
+  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
+    <value>columnHeader3</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAf9JREFUWEft
-        ls1KVlEUho/5g4kk5Ch0VILeQQ27C+8gHNjI/CH8oZk50HDsoCtolOI0E0r0DnSUUOANKJna+/Dt92Pz
-        8X2eHzYnkV542Jt19lpnnf2zzs7+q0VdoichxCul0g45KhzPAwfElHgnlsRyBfDD/7V4JFBuIt2hXRM3
-        4k9oq2L/LYEcv6MehHZH4HgurkK/LPhdhP6BQLkz4AQ+Cwf6Kb6K7+JbG7DDXtRn/A/hGIxDhRPYFnbe
-        wCCxmzupTzxudLPe0C6KJAl8wCARmACG9fSafhQzjW72MLQrwjGYFZRsBngxwbDxcsZxalB/aN8K7OyF
-        LxikJAn4qwfFrvC4aYFIgDgsyTPxVIwI/IgR4/c1lZcAoCfiSPCck0LrGfCYSrotAU/thDgRPLsUPqaf
-        BEVnQcwF5iNsgzeCYvVSoOZM3JYAeiHOhF/uMWWx77pAzVlrl8AmBmlS4Hgt2lVIZoLnRfCyvReocAK/
-        Re0JxEvwXNS+BK2bcFwcCweKNyFHkQ03K+JNSB+boWjxtyy1CcnSmXIMDwXPazuGDly0EA2LMUExGhVJ
-        CpFVphSzaflTokql+E7+jFqV/HccX0h+iX3BrcYXjhjs4DHun4rKCfyzK5nXdFXgWPul1BmykV6JVNfy
-        IYFyZ8AqPLCgSsfDwcUiBak/6N4py/4C43BM8me+uOEAAAAASUVORK5CYII=
-</value>
+  <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 451</value>
+  </data>
+  <data name="tbSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 12</value>
+  </data>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripDatabase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 11</value>
+  </data>
+  <data name="&gt;&gt;btnDisconnect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBuy.Name" xml:space="preserve">
+    <value>lblBuy</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>426, 89</value>
+  </data>
+  <data name="&gt;&gt;lvLocal.Name" xml:space="preserve">
+    <value>lvLocal</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;btnCleanTable.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rbItems.Name" xml:space="preserve">
+    <value>rbItems</value>
+  </data>
+  <data name="lblSell.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;editToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeToolStripMenuItem.Name" xml:space="preserve">
+    <value>removeToolStripMenuItem</value>
+  </data>
+  <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 56</value>
+  </data>
+  <data name="&gt;&gt;tbSell.Name" xml:space="preserve">
+    <value>tbSell</value>
+  </data>
+  <data name="tbBuy.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lvLocal.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 84</value>
+  </data>
+  <data name="&gt;&gt;lblSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCleanTable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
+    <value>btnSearch</value>
+  </data>
+  <data name="btnCleanTable.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="rbVehicles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="lblBuy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;rbVehicles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;lblSell.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSearch.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnGet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 42</value>
+  </data>
+  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>554, 11</value>
+  </data>
+  <data name="lblSell.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 12</value>
+  </data>
+  <data name="btnEdit.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;lvLocal.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 20</value>
+  </data>
+  <data name="btnDisconnect.Text" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="&gt;&gt;wikiToolStripMenuItem1.Name" xml:space="preserve">
+    <value>wikiToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;rbItems.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 136</value>
+  </data>
+  <data name="&gt;&gt;rbItems.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>794, 615</value>
+  </data>
+  <data name="&gt;&gt;tbSell.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tbBuy.Name" xml:space="preserve">
+    <value>tbBuy</value>
+  </data>
+  <data name="tbSearch.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbSell.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnGet.Text" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;lvLocal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;wikiToolStripMenuItem.Name" xml:space="preserve">
+    <value>wikiToolStripMenuItem</value>
+  </data>
+  <data name="btnDisconnect.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tbBuy.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="lblSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 15</value>
+  </data>
+  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tbBuy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 21</value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="tbSell.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 21</value>
+  </data>
+  <data name="btnDisconnect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 23</value>
+  </data>
+  <data name="lvDatabase.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;addToolStripMenuItem.Name" xml:space="preserve">
+    <value>addToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;columnHeader5.Name" xml:space="preserve">
+    <value>columnHeader5</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>340, 89</value>
+  </data>
+  <data name="&gt;&gt;lvDatabase.Name" xml:space="preserve">
+    <value>lvDatabase</value>
+  </data>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 56</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvLocal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvDatabase.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;lblSearch.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lvDatabase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, -1</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 46</value>
+  </data>
+  <data name="rbItems.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSell.Text" xml:space="preserve">
+    <value>Sell:</value>
+  </data>
+  <data name="removeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="btnGet.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbSell.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblBuy.Text" xml:space="preserve">
+    <value>Buy:</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="splitContainer1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnConnect.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wikiToolStripMenuItem.Text" xml:space="preserve">
+    <value>Wiki</value>
+  </data>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rbVehicles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripLocal.Name" xml:space="preserve">
+    <value>contextMenuStripLocal</value>
+  </data>
+  <data name="&gt;&gt;addToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvLocal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 443</value>
+  </data>
+  <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 35</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;lblSearch.Name" xml:space="preserve">
+    <value>lblSearch</value>
+  </data>
+  <data name="&gt;&gt;wikiToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="btnAdd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnImport.ToolTip" xml:space="preserve">
+    <value>Import items/vehicles</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tbSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="statusStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tbSell.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 32</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblAbout.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="lblAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 25</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="removeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSearch.Text" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="lblSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="rbItems.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBuy.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
+    <value>lblStatus</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnCleanTable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 35</value>
+  </data>
+  <data name="btnDisconnect.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="btnCleanTable.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -161,9 +614,33 @@
         F7RXuEfMTj/wXvAE/OVU6SVNV5yJ6jeYDnoE26Fa7TfdAsgFXQrYNgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="&gt;&gt;lblBuy.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
+    <value>columnHeader2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tbSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 593</value>
+  </data>
+  <data name="btnDisconnect.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbVehicles.Name" xml:space="preserve">
+    <value>rbVehicles</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Name" xml:space="preserve">
+    <value>btnRemove</value>
+  </data>
+  <data name="&gt;&gt;lblSell.Name" xml:space="preserve">
+    <value>lblSell</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAGAAoIAMAZgAAAICAAAABABgAKMgAAI4gAwBAQAAAAQAIACgWAAC26AMAMDAAAAEA
@@ -4655,4 +5132,540 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
+  <data name="lblBuy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="btnGet.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblSell.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="wikiToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Wiki</value>
+  </data>
+  <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="&gt;&gt;btnDisconnect.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="lblAbout.ToolTip" xml:space="preserve">
+    <value>Open Freenex's Steam profile</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="btnDisconnect.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rbVehicles.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvDatabase.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 5</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnConnect.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;btnGet.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCleanTable.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tbSearch.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="rbItems.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;wikiToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tbSell.Text" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="tbSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 21</value>
+  </data>
+  <data name="lblAbout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;btnGet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
+    <value>btnEdit</value>
+  </data>
+  <data name="&gt;&gt;lblSell.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="wikiToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="tbSell.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;tbBuy.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;columnHeader4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnConnect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 14</value>
+  </data>
+  <data name="btnConnect.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="lblSell.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="btnEdit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;columnHeader6.Name" xml:space="preserve">
+    <value>columnHeader6</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="btnConnect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 23</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>230</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 42</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>442, 43</value>
+  </data>
+  <data name="lblAbout.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe Print, 9.75pt</value>
+  </data>
+  <data name="groupBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmMain</value>
+  </data>
+  <data name="splitContainer1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;tbSell.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="btnRemove.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBuy.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="addToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 22</value>
+  </data>
+  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="btnRemove.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="lblSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 12</value>
+  </data>
+  <data name="rbItems.Text" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="lblAbout.Text" xml:space="preserve">
+    <value>Uconomy Utility - Shimmy's Mod</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="wikiToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 22</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rbVehicles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 16</value>
+  </data>
+  <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCleanTable.ToolTip" xml:space="preserve">
+    <value>Clean up ZaupShop tables</value>
+  </data>
+  <data name="&gt;&gt;tbSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnConnect.Name" xml:space="preserve">
+    <value>btnConnect</value>
+  </data>
+  <data name="lblSell.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>340, 46</value>
+  </data>
+  <data name="&gt;&gt;tbBuy.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tbBuy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 10</value>
+  </data>
+  <data name="&gt;&gt;lvLocal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 42</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripDatabase.Name" xml:space="preserve">
+    <value>contextMenuStripDatabase</value>
+  </data>
+  <data name="tbBuy.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbVehicles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="columnHeader6.Text" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripLocal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="btnDisconnect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 14</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 42</value>
+  </data>
+  <data name="&gt;&gt;lblAbout.Name" xml:space="preserve">
+    <value>lblAbout</value>
+  </data>
+  <data name="&gt;&gt;tbBuy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Unturned Uconomy Utility - Shimmys Mod</value>
+  </data>
+  <data name="&gt;&gt;lvDatabase.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="columnHeader4.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;btnConnect.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="lblSell.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 35</value>
+  </data>
+  <data name="rbVehicles.Text" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="columnHeader4.Width" type="System.Int32, mscorlib">
+    <value>230</value>
+  </data>
+  <data name="contextMenuStripLocal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 48</value>
+  </data>
+  <data name="&gt;&gt;tbSearch.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnDisconnect.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
+  </data>
+  <data name="btnGet.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnGet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 9</value>
+  </data>
+  <data name="&gt;&gt;lblBuy.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="btnSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="columnHeader5.Text" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnAdd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Initialize...</value>
+  </data>
+  <data name="btnSearch.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>770, 38</value>
+  </data>
+  <data name="&gt;&gt;btnCleanTable.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnConnect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="groupBox3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnConnect.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblBuy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="contextMenuStripDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 70</value>
+  </data>
+  <data name="&gt;&gt;btnDisconnect.Name" xml:space="preserve">
+    <value>btnDisconnect</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>744, 94</value>
+  </data>
+  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>810, 372</value>
+  </data>
+  <data name="&gt;&gt;btnImport.Name" xml:space="preserve">
+    <value>btnImport</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>794, 22</value>
+  </data>
+  <data name="&gt;&gt;lvDatabase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tbBuy.Text" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;columnHeader5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAbout.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="groupBox5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;editToolStripMenuItem.Name" xml:space="preserve">
+    <value>editToolStripMenuItem</value>
+  </data>
+  <data name="btnCleanTable.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;lblAbout.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblSearch.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCleanTable.Name" xml:space="preserve">
+    <value>btnCleanTable</value>
+  </data>
+  <data name="lvLocal.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="btnImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAf9JREFUWEft
+        ls1KVlEUho/5g4kk5Ch0VILeQQ27C+8gHNjI/CH8oZk50HDsoCtolOI0E0r0DnSUUOANKJna+/Dt92Pz
+        8X2eHzYnkV542Jt19lpnnf2zzs7+q0VdoichxCul0g45KhzPAwfElHgnlsRyBfDD/7V4JFBuIt2hXRM3
+        4k9oq2L/LYEcv6MehHZH4HgurkK/LPhdhP6BQLkz4AQ+Cwf6Kb6K7+JbG7DDXtRn/A/hGIxDhRPYFnbe
+        wCCxmzupTzxudLPe0C6KJAl8wCARmACG9fSafhQzjW72MLQrwjGYFZRsBngxwbDxcsZxalB/aN8K7OyF
+        LxikJAn4qwfFrvC4aYFIgDgsyTPxVIwI/IgR4/c1lZcAoCfiSPCck0LrGfCYSrotAU/thDgRPLsUPqaf
+        BEVnQcwF5iNsgzeCYvVSoOZM3JYAeiHOhF/uMWWx77pAzVlrl8AmBmlS4Hgt2lVIZoLnRfCyvReocAK/
+        Re0JxEvwXNS+BK2bcFwcCweKNyFHkQ03K+JNSB+boWjxtyy1CcnSmXIMDwXPazuGDly0EA2LMUExGhVJ
+        CpFVphSzaflTokql+E7+jFqV/HccX0h+iX3BrcYXjhjs4DHun4rKCfyzK5nXdFXgWPul1BmykV6JVNfy
+        IYFyZ8AqPLCgSsfDwcUiBak/6N4py/4C43BM8me+uOEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="contextMenuStripLocal.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAbout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="btnSearch.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rbItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 16</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>320</value>
+  </data>
+  <data name="lblSearch.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lvDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>436, 441</value>
+  </data>
+  <data name="&gt;&gt;btnGet.Name" xml:space="preserve">
+    <value>btnGet</value>
+  </data>
+  <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rbItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 8</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvLocal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="btnCleanTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 94</value>
+  </data>
+  <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 9</value>
+  </data>
+  <data name="rbVehicles.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>zh-CN</value>
+  </metadata>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>133, 17</value>
+  </metadata>
+  <metadata name="contextMenuStripDatabase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>407, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="contextMenuStripLocal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>230, 17</value>
+  </metadata>
 </root>

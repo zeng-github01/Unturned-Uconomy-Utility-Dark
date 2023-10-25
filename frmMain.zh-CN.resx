@@ -117,131 +117,206 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 24</value>
+  <data name="lvDatabase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>298, 179</value>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>编号</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>名称</value>
   </data>
-  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>编号</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 68</value>
+  <data name="columnHeader4.Text" xml:space="preserve">
+    <value>名称</value>
   </data>
-  <data name="&gt;&gt;txtBuy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="columnHeader5.Text" xml:space="preserve">
+    <value>购买价格</value>
+  </data>
+  <data name="columnHeader6.Text" xml:space="preserve">
+    <value>出售价格</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnSave.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="lblSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 12</value>
+  </data>
+  <data name="lblSearch.Text" xml:space="preserve">
+    <value>搜索:</value>
+  </data>
+  <data name="tbBuy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 10</value>
+  </data>
+  <data name="tbBuy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 21</value>
+  </data>
+  <data name="btnGet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnGet.Text" xml:space="preserve">
+    <value>获取</value>
+  </data>
+  <data name="btnRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="btnEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="lblSell.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSell.Text" xml:space="preserve">
+    <value>卖出:</value>
+  </data>
+  <data name="tbSell.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 32</value>
+  </data>
+  <data name="tbSell.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 21</value>
+  </data>
+  <data name="lblBuy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblBuy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 24</value>
-  </data>
-  <data name="lblBuy.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtBuy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 37</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="&gt;&gt;lblBuy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtBuy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 29</value>
-  </data>
-  <data name="&gt;&gt;lblBuy.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14.25pt</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>%EntryName%</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>EditDbEntry</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 6, 0</value>
-  </data>
-  <data name="&gt;&gt;txtSell.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblBuy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 6, 0</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Sell Price:</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtSell.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>11, 24</value>
-  </data>
-  <data name="txtBuy.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblBuy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 36</value>
-  </data>
-  <data name="txtSell.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 96</value>
-  </data>
-  <data name="&gt;&gt;txtSell.Name" xml:space="preserve">
-    <value>txtSell</value>
+    <value>35, 12</value>
   </data>
   <data name="lblBuy.Text" xml:space="preserve">
-    <value>Buy Price:</value>
+    <value>购买:</value>
   </data>
-  <data name="lblBuy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 9</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>数据库</value>
   </data>
-  <data name="&gt;&gt;txtSell.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnDisconnect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnDisconnect.Text" xml:space="preserve">
+    <value>断开连接</value>
+  </data>
+  <data name="btnConnect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="lblAbout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbVehicles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbVehicles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="rbVehicles.Text" xml:space="preserve">
+    <value>载具</value>
+  </data>
+  <data name="rbItems.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="rbItems.Text" xml:space="preserve">
+    <value>物品</value>
+  </data>
+  <data name="addToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="addToolStripMenuItem.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="wikiToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="wikiToolStripMenuItem1.Text" xml:space="preserve">
+    <value>百科</value>
+  </data>
+  <data name="contextMenuStripLocal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 48</value>
+  </data>
+  <data name="contextMenuStripDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 70</value>
+  </data>
+  <data name="removeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="removeToolStripMenuItem.Text" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="wikiToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="wikiToolStripMenuItem.Text" xml:space="preserve">
+    <value>百科</value>
+  </data>
+  <data name="btnImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAf9JREFUWEft
+        ls1KVlEUho/5g4kk5Ch0VILeQQ27C+8gHNjI/CH8oZk50HDsoCtolOI0E0r0DnSUUOANKJna+/Dt92Pz
+        8X2eHzYnkV542Jt19lpnnf2zzs7+q0VdoichxCul0g45KhzPAwfElHgnlsRyBfDD/7V4JFBuIt2hXRM3
+        4k9oq2L/LYEcv6MehHZH4HgurkK/LPhdhP6BQLkz4AQ+Cwf6Kb6K7+JbG7DDXtRn/A/hGIxDhRPYFnbe
+        wCCxmzupTzxudLPe0C6KJAl8wCARmACG9fSafhQzjW72MLQrwjGYFZRsBngxwbDxcsZxalB/aN8K7OyF
+        LxikJAn4qwfFrvC4aYFIgDgsyTPxVIwI/IgR4/c1lZcAoCfiSPCck0LrGfCYSrotAU/thDgRPLsUPqaf
+        BEVnQcwF5iNsgzeCYvVSoOZM3JYAeiHOhF/uMWWx77pAzVlrl8AmBmlS4Hgt2lVIZoLnRfCyvReocAK/
+        Re0JxEvwXNS+BK2bcFwcCweKNyFHkQ03K+JNSB+boWjxtyy1CcnSmXIMDwXPazuGDly0EA2LMUExGhVJ
+        CpFVphSzaflTokql+E7+jFqV/HccX0h+iX3BrcYXjhjs4DHun4rKCfyzK5nXdFXgWPul1BmykV6JVNfy
+        IYFyZ8AqPLCgSsfDwcUiBak/6N4py/4C43BM8me+uOEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCleanTable.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAArtJREFUWEe9
+        l0uojVEYhre7hJIiA+UyISMUAxMlymWg3KIYUJTcohyFlIjIQEpKIaQMpJSUASFFSTJCcikUAyH3+/M4
+        /1u7U3LO2Xt562n9/9rt9d3W+vbatYLqDt1aH/+fulbjcLgFT2GCEyifFZVRq/3wCy7AQSdQPiumLtXY
+        B17CHVhboYqXIwZmgdHvgsMwGlQcLKY4cBp0YCUk/cXrn+gGww+4CNthCaji6c8GWwZGvwmOgA6p4umP
+        gavwDlbBXidQ8ehT31Fg9CdhH8wAVbz+Sf8W0IE1cBR6Q3HV1/YBPIYNsNUJVLT5aLxX62NtMhj9TvDo
+        FW+/LqwD2WBGrQOX4bgTqKk7X0NJZxbuD8vhGNh8NHwJpoMqEn0WHQcPwahtPI7f4SyMB9UUBxLtAlgH
+        ZkFuQ4x/g8/VOBfsgiNBNVSGRDAWfoIGF8NEmAcr4AoYufi5x28jHADV0CmIA0PgObyF1fAG3sMJmA/T
+        YBtYkhdwHq6DargMSeEgGAE3IPVOVh7BbpgKM+EMuBdUU05Cj2o8BBq01nEiqRcdMnI7Yf0dQDqdiRhv
+        gXrj9WjY+YzOWRLV0B6IcTeei9ZH+ze+VKM/y8rIB8CwP28dKElS5m73qBldah7avkucnA3RKTAzNi71
+        Tydi3MtkjDyD+9VznPlajTHuc5rSJOgJnqApsBnarXiYq/UrWAQesRj7CF65Y9jxEyQDNq671bP9QnXo
+        YhIn5oCtdQe42Idq9ER44/E5dT8HXsd99zrmnNg1VbvrH+lxvuSv3WtwQY2Y2mvVu2mXhWC2nPMyeq96
+        tjOqTl3N/FK+6G7eA/b7gZDI5SYMBbuk79bdG9EYaIriRDLibdc/Hd6CNLge+oJ7w/eloOwDDbfjSONt
+        F7RXuEfMTj/wXvAE/OVU6SVNV5yJ6jeYDnoE26Fa7TfdAsgFXQrYNgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnCleanTable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4734,37 +4809,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
-  <data name="&gt;&gt;lblBuy.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;txtBuy.Name" xml:space="preserve">
-    <value>txtBuy</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
-    <value>btnSave</value>
-  </data>
-  <data name="&gt;&gt;txtSell.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtBuy.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtSell.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 29</value>
-  </data>
-  <data name="&gt;&gt;lblBuy.Name" xml:space="preserve">
-    <value>lblBuy</value>
-  </data>
-  <data name="&gt;&gt;txtBuy.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 131</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>zh-CN</value>
-  </metadata>
 </root>
